@@ -10,26 +10,27 @@ USER_SCOPE = [AuthScope.CHAT_READ]
 
 
 async def on_ready(ready_event: EventData):
-    print("El bot está listo")
+    print("The bot is ready")
 
     await ready_event.chat.join_room(env.TARGET_CHANNEL)
 
 async def on_message(msg: ChatMessage):
-    print(msg.text)
-    if msg.text == "!aba":
-        pydirectinput.press("s", 2)
-    if msg.text == "!arr":
-        pydirectinput.press("w", 2)
-    if msg.text == "!izq":
-        pydirectinput.press("a", 2)
-    if msg.text == "!der":
-        pydirectinput.press("d", 2)
-    if msg.text == "!a":
+    if msg.text == env.down:
+        pydirectinput.press("s", env.steps)
+    if msg.text == env.up:
+        pydirectinput.press("w", env.steps)
+    if msg.text == env.left:
+        pydirectinput.press("a", env.steps)
+    if msg.text == env.right:
+        pydirectinput.press("d", env.steps)
+    if msg.text == env.BtnA:
         pydirectinput.press("k")
-    if msg.text == "!srt":
+    if msg.text == env.Select:
         pydirectinput.press("i")
-    if msg.text == "!b":
+    if msg.text == env.BtnB:
         pydirectinput.press("j")
+    if msg.text == env.Select:
+        pydirectinput.press("u")
 
 
 
