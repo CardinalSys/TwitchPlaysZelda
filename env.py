@@ -3,6 +3,8 @@ APP_ID = 'ClientID'
 APP_SECRET = 'ClientSecret'
 TARGET_CHANNEL = 'ChannelName'
 
+#Customization:
+
 #The number of times that a directional button will be pressed
 steps = 1
 
